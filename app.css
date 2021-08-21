@@ -22,6 +22,7 @@ body {
     border-radius: 50px;
     color: wheat;
     font-size: 40px;
+    font-family: 'Common Pixel',sans-serif;
 }
 
 
@@ -53,6 +54,7 @@ body {
     border-radius: 50px;
     font-size: 40px;
     color: wheat;
+    font-family: 'Common Pixel',sans-serif;
 }
 
 
@@ -171,6 +173,7 @@ body {
     color: rgb(170, 8, 8);
     font-size: 45px;
     font-weight: bold;
+    font-family: 'Common Pixel',sans-serif;
  }
     
     /* player 1 wins*/
@@ -178,6 +181,7 @@ body {
     color: rgb(7, 22, 109);
     font-size: 45px;
     font-weight: bold;
+    font-family: 'Common Pixel',sans-serif;
 }
 
 
@@ -186,6 +190,7 @@ body {
     color: rgb(182, 18, 18);
     font-size: 45px;
     font-weight: bold;
+    font-family: 'Common Pixel',sans-serif;
 }
 
 
