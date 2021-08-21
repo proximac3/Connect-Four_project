@@ -1,0 +1,201 @@
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+/* Player tab style */ 
+#players {
+    width: 90%;
+    height: 11%;
+    display: flex;
+    margin: auto;
+}
+
+/* Player 1 style*/
+#player-1 {
+    width: 40%;
+    height: 100%;
+    background-color: rgb(7, 11, 79);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    color: wheat;
+    font-size: 40px;
+}
+
+
+/* Start button style*/
+#start-game {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn-1{
+    width: 60%;
+    height: 50%;
+    font-size: 20px;
+    border-radius: 40px;
+    font-weight: bold;
+}
+
+/* Player 2 style*/
+#player-2 {
+    width: 40%;
+    height: 100%;
+    background-color: rgb(106, 8, 8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    font-size: 40px;
+    color: wheat;
+}
+
+
+/* results style*/
+#results {
+    display: flex;
+    margin: auto;
+    width: 60%;
+    height: 3%;
+    justify-content:  center;
+    align-items: center;
+} 
+
+
+/* overall board style */
+#game {
+    width: 60%;
+    height: 80%;
+    margin: auto;
+    display: flex;
+    padding: 10px;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* overflow: hidden; */
+    contain: content;
+}
+
+/* Top Column style*/
+.topcolumn{
+    width: 100%;
+    height: 15%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.game-elements {
+    width: 100%;
+    height: 80%;
+    margin: auto;
+    display: flex;
+    /* padding: 10px; */
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* overflow: hidden; */
+    /* contain: content; */
+}
+
+
+.boxes {
+    background: rgb(208, 208, 208);
+    width: 12.9%;
+    height: 100%;
+    margin: 0px 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+
+.game-boxes {
+    background: rgb(255, 255, 255);
+    width: 13%;
+    height: 14%;
+    margin: 0px 1px;
+    margin-top: 1px;
+    font-size: 100px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* display: inline; */
+    box-shadow: -2px 2px 5px -1px #000000;
+}
+
+
+
+/* player one red style*/
+.red {
+    background-color: rgb(102, 0, 0);
+    width: 70%;
+    height: 70%;
+    border-radius: 90%;
+    border: 2px solid black;
+    animation-name: scale-up-center;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+}
+
+
+/* player 2 blue style*? */
+.blue {
+    background-color: rgb(27, 6, 102);
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    border: 2px solid black;
+    animation-name: scale-up-center;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+}
+    
+    /* Game over element Style*/
+#gameOver {
+    color: rgb(170, 8, 8);
+    font-size: 45px;
+    font-weight: bold;
+ }
+    
+    /* player 1 wins*/
+#p1{
+    color: rgb(7, 22, 109);
+    font-size: 45px;
+    font-weight: bold;
+}
+
+
+/* player 2 wins*/
+#p2 {
+    color: rgb(182, 18, 18);
+    font-size: 45px;
+    font-weight: bold;
+}
+
+
+@keyframes scale-up-center {
+  0%{
+    -webkit-transform: scale(.2);
+    transform: scale(.2);
+  }
+  100%{
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
