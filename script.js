@@ -196,6 +196,9 @@ startGame.addEventListener('click', function () {
         const playerOne = new Players('Hale Comstock', 1)
         const playerTwo = new Players('Andrey Ryan', 2)
         let currentPlayer = playerOne
+        
+        // stopping game fter winner
+        let gamePlay = true
     
     
     
@@ -208,25 +211,29 @@ startGame.addEventListener('click', function () {
             // dropping targets onto board
             var id = e.target.id
             let count = liveModelArray.length - 1
-            while (count !== -1) {
-                if (liveModelArray[count][id].id === 'null') {
-                    if (currentPlayer === playerOne) {
-                        liveModelArray[count][id].childNodes[0].setAttribute('class', 'blue')
-                        liveModelArray[count][id].setAttribute('id', `${currentPlayer.playerNum}`)
-                    } else {
-                        liveModelArray[count][id].childNodes[0].setAttribute('class', 'red')
-                        liveModelArray[count][id].setAttribute('id', `${currentPlayer.playerNum}`)
+            
+             if (gamePlay === true) {
+                while (count !== -1) {
+                    if (liveModelArray[count][id].id === 'null') {
+                        if (currentPlayer === playerOne) {
+                            liveModelArray[count][id].childNodes[0].setAttribute('class', 'blue')
+                            liveModelArray[count][id].setAttribute('id', `${currentPlayer.playerNum}`)
+                        } else {
+                            liveModelArray[count][id].childNodes[0].setAttribute('class', 'red')
+                            liveModelArray[count][id].setAttribute('id', `${currentPlayer.playerNum}`)
+                        }
+                        break
                     }
-                    break
+                    count--
                 }
-                count--
-            }
     
             //horizontally checking board for winner and append Winner to DOM
             if (game.horizontaWinCheck(liveModelArray) === `Player 2 won`) {
                 results.append(player2Win)
+                gamePlay = false
             } else if (game.horizontaWinCheck(liveModelArray) === `Player one won`) {
                 results.append(player1Win)
+                gamePlay = false
             }
     
     
@@ -263,29 +270,36 @@ startGame.addEventListener('click', function () {
             
             //vertically checking board for win & appending winner to DOM
             if (verticalWinCheck(liveModelArray) === 'Player 1 Won') {
-                    results.append(player1Win)
+                results.append(player1Win)
+                gamePlay = false
             } else if (verticalWinCheck(liveModelArray) === 'player 2 won') {
                 results.append(player2Win)
+                gamePlay = false
                 }
     
             
             // Check board for diagonal win
             if (game.diagonal(liveModelArray) === `Player 1 wins the game`) {
                 results.append(player1Win)
+                gamePlay = false
             } else if (game.diagonal(liveModelArray) === `Player 2 wins the game`) {
                 results.append(player2Win)
+                gamePlay = false
             }
             
             if (game.diagonal(liveModelArray, true) === `Player 1 wins the game`) {
                 results.append(player1Win)
+                gamePlay = false
             } else if (game.diagonal(liveModelArray, true) === `Player 2 wins the game`) {
                 results.append(player2Win)
+                gamePlay = false
             }
             
             // check if board is full
             spotsLeft--
             if (spotsLeft === 0) {
                 results.append(gameOver)
+                gamePlay = false
             }
         })
     }
